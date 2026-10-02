@@ -6,7 +6,7 @@
 //    only while that subagent runs.
 //  - plugin: plugin agents ignore frontmatter hooks, so hooks/hooks.json runs
 //    it for every tool call with `--plugin`; it then guards only
-//    `do-shit:<role>` agents and leaves the user's own agents alone.
+//    `<plugin>:<role>` agents (e.g. `real-skills:worker`) and leaves the user's own agents alone.
 //
 //  - read-only roles: no Edit/Write; no mutating git, sed -i, rm, mv, or
 //    redirects into relative paths

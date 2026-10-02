@@ -17,7 +17,7 @@ const ALIASES = { investigator: ['researcher'], worker: ['implementer'], tester:
 
 // Same-name repo agent wins natively (Claude Code project > user > plugin precedence).
 // Otherwise a prefixed repo agent (e.g. acme-researcher) is used for the role.
-// Installed as a plugin, the bundled agent is `do-shit:<role>` unless a user-level one exists.
+// Installed as a plugin, the bundled agent is `<plugin>:<role>` unless a user-level one exists.
 export function resolveAgent(repo, role) {
   const dir = join(repo, '.claude/agents');
   if (existsSync(join(dir, `${role}.md`))) return { agent: role, source: 'repo' };

@@ -1,9 +1,0 @@
-{
-  "name": "do-shit",
-  "version": "0.1.0",
-  "description": "Orchestrate GitHub, ClickUp or Linear items end to end: investigator plans, role-based subagent teams driven by a deterministic harness plus Jev judgments, one PR per leaf, gated merge, optional QA with evidence.",
-  "author": { "name": "jpcasa", "url": "https://github.com/jpcasa" },
-  "repository": "https://github.com/jpcasa/claude-skills",
-  "license": "MIT",
-  "keywords": ["orchestration", "subagents", "github", "clickup", "linear", "pr"]
-}

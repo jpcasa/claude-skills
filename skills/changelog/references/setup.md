@@ -1,6 +1,6 @@
 # Setup — writes `.claude/changelog.json`
 
-Runs on first use or on `/changelog setup`. Look facts up; ask only for decisions. **One** AskUserQuestion round for everything below, with the detected value as the recommended option.
+Runs on first use or on `/real-skills:changelog setup`. Look facts up; ask only for decisions. **One** AskUserQuestion round for everything below, with the detected value as the recommended option.
 
 ## 1. Repo and branches (look up)
 

@@ -4,7 +4,7 @@
 //   <root>/hooks/lib/redact.jq
 // where <root> is ~/.claude (hand-installed) or the plugin root.
 
-import { existsSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { homedir } from 'node:os';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -14,9 +14,10 @@ export const ROOT = join(SKILL_DIR, '../..');
 export const REPORT_SCHEMA = join(SKILL_DIR, 'schemas/report.schema.json');
 export const REDACT_LIB = process.env.DO_SHIT_REDACT_LIB || join(ROOT, 'hooks/lib');
 
-// Installed as a plugin: role agents are namespaced `do-shit:<role>`.
-export const PLUGIN = existsSync(join(ROOT, '.claude-plugin/plugin.json'));
-export const PLUGIN_NAME = 'do-shit';
+// Installed as a plugin: role agents are namespaced `<plugin name>:<role>`.
+const MANIFEST = join(ROOT, '.claude-plugin/plugin.json');
+export const PLUGIN = existsSync(MANIFEST);
+export const PLUGIN_NAME = PLUGIN ? JSON.parse(readFileSync(MANIFEST, 'utf8')).name : null;
 
 const USER_AGENTS = () => process.env.DO_SHIT_AGENTS_DIR || join(homedir(), '.claude/agents');
 

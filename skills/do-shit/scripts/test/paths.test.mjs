@@ -18,14 +18,14 @@ test('bundled schema, redact lib and agents resolve', async () => {
 
 const resolve = (env) =>
   JSON.parse(execFileSync('node', ['--input-type=module', '-e',
-    `import { resolveAgent } from '${join(LIB, 'repo.mjs')}'; import { PLUGIN } from '${join(LIB, 'paths.mjs')}';
-     console.log(JSON.stringify({ PLUGIN, r: resolveAgent('/nonexistent', 'worker') }))`],
+    `import { resolveAgent } from '${join(LIB, 'repo.mjs')}'; import { PLUGIN, PLUGIN_NAME as NAME } from '${join(LIB, 'paths.mjs')}';
+     console.log(JSON.stringify({ PLUGIN, NAME, r: resolveAgent('/nonexistent', 'worker') }))`],
   { env: { ...process.env, ...env } }).toString());
 
 test('plugin install: bundled agent is namespaced, user-level agent wins', () => {
   const empty = mkdtempSync(join(tmpdir(), 'agents-'));
   const out = resolve({ DO_SHIT_AGENTS_DIR: empty });
-  assert.deepEqual(out.r, out.PLUGIN ? { agent: 'do-shit:worker', source: 'plugin' } : { agent: 'worker', source: 'user' });
+  assert.deepEqual(out.r, out.PLUGIN ? { agent: `${out.NAME}:worker`, source: 'plugin' } : { agent: 'worker', source: 'user' });
   writeFileSync(join(empty, 'worker.md'), '---\nname: worker\n---\n');
   assert.deepEqual(resolve({ DO_SHIT_AGENTS_DIR: empty }).r, { agent: 'worker', source: 'user' });
 });

@@ -9,14 +9,9 @@
   },
   "plugins": [
     {
-      "name": "do-shit",
-      "source": "./plugins/do-shit",
-      "description": "Tracker items to merged PRs via role-based subagent teams and a deterministic harness."
-    },
-    {
-      "name": "jp",
-      "source": "./plugins/jp",
-      "description": "Everyday skills: /jp:changelog and /jp:quick-ask-me."
+      "name": "real-skills",
+      "source": "./",
+      "description": "do-shit, changelog and quick-ask-me in one install."
     }
   ]
 }

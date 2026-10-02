@@ -186,7 +186,7 @@ Say `shadow`/`degraded` mode plainly.
 - **Only you write** to trackers, push, open PRs or merge. Agents never do; their definitions forbid it.
 - **Role agents.**
   - Resolution (`subagent_type`) comes from the harness.
-  - A repo's `.claude/agents/<role>.md` overrides the user-level one, which overrides the bundled `do-shit:<role>`, natively. A prefixed repo agent (e.g. `acme-researcher` for investigator) is used when present.
+  - A repo's `.claude/agents/<role>.md` overrides the user-level one, which overrides the bundled plugin agent (`real-skills:<role>`), natively. A prefixed repo agent (e.g. `acme-researcher` for investigator) is used when present.
   - The report contract is in every prompt file, so overrides still return a valid JSON report.
 - **Worktrees** live under `<repo>/.claude/worktrees/ds-*`. The harness creates and removes them; don't touch them yourself except for the git commands above.
 - **Outward-facing text:**

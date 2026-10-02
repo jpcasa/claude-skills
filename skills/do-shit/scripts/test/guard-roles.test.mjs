@@ -5,6 +5,7 @@ import { mkdtempSync, mkdirSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { PLUGIN_NAME } from '../lib/paths.mjs';
 
 const HOOK = join(dirname(fileURLToPath(import.meta.url)), '../../../../hooks/guard-roles.mjs');
 const tmp = mkdtempSync(join(tmpdir(), 'guard-roles-'));
@@ -30,11 +31,11 @@ test('unknown agent types are ignored', () => {
   assert.equal(run({ agent_type: 'cavecrew-builder', tool_name: 'Write', tool_input: { file_path: join(repo, 'x') } }), null);
 });
 
-test('plugin mode guards only do-shit:<role> agents', () => {
+test('plugin mode guards only <plugin>:<role> agents', () => {
   const edit = { tool_name: 'Edit', tool_input: { file_path: join(wt, 'src/a.ts') } };
   assert.equal(run({ agent_type: 'tester', ...edit }, ['--plugin']), null);
-  assert.ok(denied(run({ agent_type: 'do-shit:tester', ...edit }, ['--plugin'])));
-  assert.ok(denied(run({ agent_type: 'do-shit:worker', tool_name: 'Bash', tool_input: { command: 'git push' } }, ['--plugin'])));
+  assert.ok(denied(run({ agent_type: `${PLUGIN_NAME}:tester`, ...edit }, ['--plugin'])));
+  assert.ok(denied(run({ agent_type: `${PLUGIN_NAME}:worker`, tool_name: 'Bash', tool_input: { command: 'git push' } }, ['--plugin'])));
 });
 
 test('read-only role cannot edit', () => {
