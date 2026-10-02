@@ -1,0 +1,9 @@
+{
+  "name": "jp",
+  "version": "0.1.0",
+  "description": "Everyday skills: /jp:changelog (release notes from promotion PRs or tags, with tracker links) and /jp:quick-ask-me (short interview that ends in an implementation brief).",
+  "author": { "name": "jpcasa", "url": "https://github.com/jpcasa" },
+  "repository": "https://github.com/jpcasa/claude-skills",
+  "license": "MIT",
+  "keywords": ["changelog", "release-notes", "clickup", "linear", "github", "planning", "interview"]
+}

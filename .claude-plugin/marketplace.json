@@ -1,12 +1,22 @@
 {
   "name": "jpcasa-skills",
-  "owner": { "name": "jpcasa", "url": "https://github.com/jpcasa" },
-  "metadata": { "description": "Claude Code skills for everyday engineering work." },
+  "owner": {
+    "name": "jpcasa",
+    "url": "https://github.com/jpcasa"
+  },
+  "metadata": {
+    "description": "Claude Code skills for everyday engineering work."
+  },
   "plugins": [
     {
       "name": "do-shit",
       "source": "./plugins/do-shit",
       "description": "Tracker items to merged PRs via role-based subagent teams and a deterministic harness."
+    },
+    {
+      "name": "jp",
+      "source": "./plugins/jp",
+      "description": "Everyday skills: /jp:changelog and /jp:quick-ask-me."
     }
   ]
 }

@@ -1,0 +1,18 @@
+{
+  "repo": "acme/app",
+  "release": {
+    "mode": "promotion",
+    "main_branch": "main",
+    "production_branch": "production",
+    "tag_pattern": "v*"
+  },
+  "tracker": {
+    "type": "clickup",
+    "id_pattern": "86[0-9a-z]{7}",
+    "url_template": "https://app.clickup.com/t/{id}",
+    "list_ids": ["900000000000"]
+  },
+  "in_progress_days": 3,
+  "areas": ["Checkout", "Billing", "Mobile app", "Admin"],
+  "output_dir": "docs/changelogs"
+}
