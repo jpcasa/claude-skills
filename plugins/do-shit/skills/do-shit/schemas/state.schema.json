@@ -1,0 +1,43 @@
+{
+  "$id": "do-shit/state",
+  "title": "Run state — ~/.claude/state/do-shit/<run-id>/run.json",
+  "type": "object",
+  "required": ["run_id", "created_at", "repo", "base", "tracker", "mode", "dry_run", "phase", "spawn_cap", "spawns_used", "items", "teams", "plan", "merge_plan", "qa"],
+  "properties": {
+    "run_id": { "type": "string" },
+    "created_at": { "type": "string" },
+    "repo": { "type": "string" },
+    "base": { "type": "string" },
+    "tracker": { "type": "string", "enum": ["github", "clickup", "linear"] },
+    "mode": { "type": "string", "enum": ["shadow", "live", "degraded"] },
+    "dry_run": { "type": "boolean" },
+    "phase": { "type": "string", "enum": ["intake", "plan", "checkpoint", "build", "merge_approval", "merge", "qa_approval", "qa", "done"] },
+    "spawn_cap": { "type": "integer" },
+    "spawns_used": { "type": "integer" },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "ref", "title", "leaf", "status_history"],
+        "properties": {
+          "id": { "type": "string" },
+          "ref": { "type": "string" },
+          "title": { "type": "string" },
+          "parent": { "type": ["string", "null"] },
+          "leaf": { "type": "boolean" },
+          "excluded": { "type": ["string", "null"] },
+          "status_initial": { "type": ["string", "null"] },
+          "status_type": { "type": ["string", "null"] },
+          "status_history": { "type": "array" },
+          "team": { "type": ["string", "null"] },
+          "pr": { "type": ["object", "null"] },
+          "outcome": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "teams": { "type": "array", "items": { "type": "string" } },
+    "plan": { "type": "object" },
+    "merge_plan": { "type": "array" },
+    "qa": { "type": "object" }
+  }
+}

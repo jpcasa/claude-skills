@@ -1,0 +1,5 @@
+.DS_Store
+node_modules/
+# Jev calibration inputs come from real PRs and tickets: keep them local.
+plugins/*/skills/*/scripts/eval/fixtures/
+plugins/*/skills/*/scripts/eval/cache.json

@@ -1,0 +1,129 @@
+{
+  "fixtures": 30,
+  "errors": [],
+  "report": {
+    "same_failure_as_last_loop": {
+      "n": 5,
+      "positives": 3,
+      "current": 0.3,
+      "accuracy_at_current": 1,
+      "best": {
+        "threshold": 0.3,
+        "f1": 1,
+        "accuracy": 1,
+        "plateau": [
+          0.3,
+          0.3
+        ]
+      },
+      "misses_at_best": [],
+      "flag": null
+    },
+    "plan_is_wrong": {
+      "n": 8,
+      "positives": 3,
+      "current": 0.6,
+      "accuracy_at_current": 0.875,
+      "best": {
+        "threshold": 0.5,
+        "f1": 0.8,
+        "accuracy": 0.875,
+        "plateau": [
+          0.3,
+          0.75
+        ]
+      },
+      "misses_at_best": [
+        "loopDecision-pr-2635-loop1:plan_is_wrong p=0.24 y=true"
+      ],
+      "flag": null
+    },
+    "open_review_comments_blocking": {
+      "n": 4,
+      "positives": 2,
+      "current": 0.5,
+      "accuracy_at_current": 1,
+      "best": {
+        "threshold": 0.55,
+        "f1": 1,
+        "accuracy": 1,
+        "plateau": [
+          0.3,
+          0.8
+        ]
+      },
+      "misses_at_best": [],
+      "flag": null
+    },
+    "ci_failure_unrelated_to_pr": {
+      "n": 6,
+      "positives": 3,
+      "current": 0.3,
+      "accuracy_at_current": 1,
+      "best": {
+        "threshold": 0.3,
+        "f1": 1,
+        "accuracy": 1,
+        "plateau": [
+          0.3,
+          0.35
+        ]
+      },
+      "misses_at_best": [],
+      "flag": null
+    },
+    "depends_on": {
+      "n": 14,
+      "positives": 3,
+      "current": 0.6,
+      "accuracy_at_current": 1,
+      "best": {
+        "threshold": 0.5,
+        "f1": 1,
+        "accuracy": 1,
+        "plateau": [
+          0.3,
+          0.7
+        ]
+      },
+      "misses_at_best": [],
+      "flag": null
+    },
+    "overlap": {
+      "n": 7,
+      "positives": 3,
+      "current": 0.5,
+      "accuracy_at_current": 1,
+      "best": {
+        "threshold": 0.55,
+        "f1": 1,
+        "accuracy": 1,
+        "plateau": [
+          0.3,
+          0.8
+        ]
+      },
+      "misses_at_best": [],
+      "flag": null
+    },
+    "needs_role": {
+      "n": 44,
+      "positives": 18,
+      "current": 0.45,
+      "accuracy_at_current": 0.977,
+      "best": {
+        "threshold": 0.45,
+        "f1": 0.971,
+        "accuracy": 0.977,
+        "plateau": [
+          0.45,
+          0.45
+        ]
+      },
+      "misses_at_best": [
+        "roleNeeds-pr-2751:needs_docs-writer p=0.05 y=true"
+      ],
+      "flag": null
+    }
+  }
+}

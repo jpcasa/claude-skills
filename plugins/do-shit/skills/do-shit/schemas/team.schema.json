@@ -1,0 +1,19 @@
+{
+  "$id": "do-shit/team",
+  "title": "Team state — ~/.claude/state/do-shit/<run-id>/teams/<team-id>.json",
+  "type": "object",
+  "required": ["team_id", "leaves", "current_leaf", "loop", "max_loops", "stage", "roles", "pending", "leaf_state", "history", "outcome"],
+  "properties": {
+    "team_id": { "type": "string" },
+    "leaves": { "type": "array", "items": { "type": "string" } },
+    "current_leaf": { "type": ["string", "null"] },
+    "loop": { "type": "integer" },
+    "max_loops": { "type": "integer" },
+    "stage": { "type": "string", "enum": ["queued", "plan", "build", "review", "decide", "pr", "done"] },
+    "roles": { "type": "array", "items": { "type": "string" } },
+    "pending": { "type": "array", "items": { "type": "string" } },
+    "leaf_state": { "type": "object" },
+    "history": { "type": "array" },
+    "outcome": { "type": ["string", "null"] }
+  }
+}
