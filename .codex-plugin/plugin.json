@@ -1,0 +1,20 @@
+{
+  "name": "real-skills",
+  "version": "0.1.0",
+  "description": "Everyday engineering skills: changelog (release notes from promotion PRs or tags, linked to your tracker) and quick-ask-me (short interview that ends in an implementation brief). do-shit is Claude Code only.",
+  "author": { "name": "jpcasa", "url": "https://github.com/jpcasa" },
+  "homepage": "https://github.com/jpcasa/real-skills",
+  "repository": "https://github.com/jpcasa/real-skills",
+  "license": "MIT",
+  "keywords": ["changelog", "release-notes", "planning", "interview", "github", "clickup", "linear"],
+  "skills": "./skills/",
+  "hooks": {},
+  "interface": {
+    "displayName": "Real Skills",
+    "shortDescription": "Changelogs from your releases and quick planning interviews",
+    "developerName": "jpcasa",
+    "category": "Developer Tools",
+    "capabilities": ["Interactive", "Read", "Write"],
+    "websiteURL": "https://github.com/jpcasa/real-skills"
+  }
+}

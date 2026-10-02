@@ -1,0 +1,5 @@
+interface:
+  display_name: "Quick Ask Me"
+  short_description: "Light interview: objective, success criteria, then just enough to implement"
+policy:
+  allow_implicit_invocation: false

@@ -16,9 +16,7 @@ Config ──► Audience ──► Resolve releases ──► Per-PR summary �
 
 **This skill is read-only.** It never merges, promotes, tags, or writes to a tracker. The only file it writes is the changelog itself (and `.claude/changelog.json` during setup).
 
-```
-S="${CLAUDE_PLUGIN_ROOT}/skills/changelog"
-```
+`S` below is this skill's directory: `${CLAUDE_PLUGIN_ROOT}/skills/changelog` in Claude Code, or wherever your agent installed the skill (e.g. `~/.codex/skills/changelog`).
 
 ## Phase 0 — Config
 
@@ -29,7 +27,7 @@ Settings live in `<repo>/.claude/changelog.json`. See [config.example.json](conf
 
 ## Phase 1 — Audience
 
-`$ARGUMENTS` may already carry the audience. If it does not, ask with AskUserQuestion, exactly two options:
+`$ARGUMENTS` may already carry the audience. If it does not, ask with your structured-question tool (AskUserQuestion in Claude Code), or in chat if there is none. Exactly two options:
 
 - **Technical**: engineers. PR numbers, root causes, migrations, feature flags.
 - **Non-technical**: ops, support, leadership. What changed for the people using the product.

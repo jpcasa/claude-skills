@@ -1,0 +1,5 @@
+interface:
+  display_name: "do-shit (Claude Code only)"
+  short_description: "Tracker items to merged PRs via role-based subagent teams. Requires Claude Code."
+policy:
+  allow_implicit_invocation: false

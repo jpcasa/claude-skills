@@ -6,6 +6,8 @@ argument-hint: "<ref-or-url> [<more>...] [--dry-run] | resume <run-id> | status 
 
 # /do-shit
 
+**Requires Claude Code.** This skill launches the plugin's bundled role agents through the Agent tool (`subagent_type`) and relies on the plugin's PreToolUse guard. If you cannot spawn a subagent by `subagent_type`, or the role agents are not available, stop and tell the user: "/do-shit needs Claude Code with the real-skills plugin installed." Do not improvise the roles yourself.
+
 You are the **orchestrator**. You never write feature code. A deterministic harness owns state and every loop decision:
 
 ```

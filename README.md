@@ -1,6 +1,6 @@
-# claude-skills
+# real-skills
 
-One Claude Code plugin, `real-skills`, with skills for everyday engineering work. Install once, get every skill.
+Skills for everyday engineering work, packaged as one plugin, `real-skills`. Install once, get every skill. Works in Claude Code and Codex. `do-shit` needs Claude Code.
 
 | Command | What it does |
 |---|---|
@@ -11,12 +11,30 @@ One Claude Code plugin, `real-skills`, with skills for everyday engineering work
 
 ## Install
 
+### Claude Code
+
 ```bash
-claude plugin marketplace add jpcasa/claude-skills
+claude plugin marketplace add jpcasa/real-skills
 claude plugin install real-skills@jpcasa-skills
 ```
 
-Or inside a session: `/plugin marketplace add jpcasa/claude-skills`, then `/plugin install real-skills@jpcasa-skills`. Start a new session afterwards.
+Or inside a session: `/plugin marketplace add jpcasa/real-skills`, then `/plugin install real-skills@jpcasa-skills`. Start a new session afterwards. Commands are prefixed with the plugin name: `/real-skills:changelog`.
+
+### Codex
+
+```bash
+npx skills add jpcasa/real-skills -a codex
+```
+
+This copies the skills into Codex's skills folder. Invoke them as `/changelog` and `/quick-ask-me`. The repo also ships Codex plugin manifests (`.codex-plugin/plugin.json`, `.agents/plugins/marketplace.json`) for plugin-aware installs.
+
+### Support
+
+| Skill | Claude Code | Codex |
+|---|---|---|
+| `changelog` | ✓ | ✓ (tracker connectors must be configured in Codex too) |
+| `quick-ask-me` | ✓ | ✓ |
+| `do-shit` | ✓ | ✗: needs Claude Code subagents, plugin agents and hooks; stops with a message elsewhere |
 
 ## Requirements
 
@@ -33,7 +51,9 @@ Or inside a session: `/plugin marketplace add jpcasa/claude-skills`, then `/plug
 .claude-plugin/
   marketplace.json      marketplace "jpcasa-skills"
   plugin.json           plugin "real-skills" (root of this repo)
-skills/
+.codex-plugin/plugin.json             Codex plugin manifest
+.agents/plugins/marketplace.json      Codex marketplace manifest
+skills/                 each skill also has agents/openai.yaml (Codex display + invocation policy)
   do-shit/              orchestrator skill + harness (scripts/harness.mjs)
   changelog/            skill + release-ranges.sh + tracker adapters
   quick-ask-me/         skill + CONTEXT/ADR formats

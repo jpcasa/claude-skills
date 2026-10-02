@@ -1,0 +1,3 @@
+interface:
+  display_name: "Changelog"
+  short_description: "Release notes from promotion PRs or tags, linked to your tracker"
